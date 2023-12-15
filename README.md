@@ -15,6 +15,7 @@ Understanding these connections can aid in developing targeted interventions or 
 ### Data
 The data for this project was obtained from the provided link, and it will be included in the .gitignore.
 
+```
 EJ_vulnerable
 │   README.md
 │   Rmd/Proj files    
