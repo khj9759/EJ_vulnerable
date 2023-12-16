@@ -13,7 +13,7 @@ Understanding these connections can aid in developing targeted interventions or 
 
 
 ### Data
-The data for this project was obtained from the provided link, and it will be included in the .gitignore.
+The data for this project was obtained from the provided [link](https://drive.google.com/file/d/1lcazRbNSmP8Vj9sH1AIJcO4D1d_ulJij/view), and it will be included in the `.gitignore`.
 
 ```
 EJ_vulnerable
@@ -21,9 +21,9 @@ EJ_vulnerable
 │   Rmd/Proj files    
 │
 └───data
-    │   column descriptions: EJSCREEN_2023_BG_Columns.xlsx
-    │   metadata explation: ejscreen-tech-doc-version-2-2.pdf
-    │   spatial data: EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb
-    |   biodiversity data: gbif-birds-LA/gbif-birds-LA.shp
+    │   EJSCREEN_2023_BG_Columns.xlsx
+    │   ejscreen-tech-doc-version-2-2.pdf
+    │   EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb
+    |   gbif-birds-LA/gbif-birds-LA.shp
 ```
 

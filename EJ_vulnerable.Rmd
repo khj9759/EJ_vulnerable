@@ -1,9 +1,5 @@
-```{r setup, include=FALSE}
-# set up code options for Rmd 
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
-```
+# Contemporary environmental justice and wildlife conservation issue in Los Angeles County, California
 
-# Contemporary environmental justice and wildlife conservation issue in Los Angeles County, California 
 ## Background
 
 Contemporary environmental justice often reflects historical injustices, especially in the persistent legacy of racial segregation in the United States. During the 1930s, the Home Owners' Loan Corporation (HOLC) evaluated neighborhoods under the New Deal based on perceived real estate investment safety, using a discriminatory "redlining" system of A (green), B (blue), C (yellow), and D (red) to limit home loan access. This is covered by the [New York Times](https://www.nytimes.com/interactive/2020/08/24/climate/racism-redlining-cities-global-warming.html). This practice, extensively documented, has not only impacted community wealth but also health by creating areas with fewer green spaces and higher temperatures. Recent research has shown that redlining not only affects local environments but also skews biodiversity observations. Citizen science, a platform for sharing species observations, generates substantial data, yet Ellis-Soto and colleagues discovered that redlined neighborhoods are significantly underrepresented across 195 US cities in these observations. This disparity is concerning as conservation decisions heavily rely on such data for effective policies and actions. This is covered by [EOS](https://eos.org/articles/bird-biodiversity-reports-reflect-cities-redlined-past?utm_source=EosBuzz&mkt_tok=OTg3LUlHVC01NzIAAAGOx3ckQPpeDY3QyFKdUnBSYqILj3qLrgb_Q2lasphwcF90xEzMgjZFUo3NHsw3caXDcZe6I8D8qdVsSRr3wzhb6LKAQRgNo8ffhjieEbDwMw).
@@ -12,12 +8,23 @@ Contemporary environmental justice often reflects historical injustices, especia
 
 Understanding these connections can aid in developing targeted interventions or policies to address both environmental justice issues and wildlife conservation in these areas.
 
+## Highlight
+
+-   Manipulating vector and raster data
+-   Generating centroids
+-   Utilizing intersection
+-   Conducting spatial joins
+-   Creating plots with ggplot
+
 ## Datsets
 
 ```{r load-packages}
 library(tidyverse)
 library(sf)
 library(tmap)
+library(here)
+
+here::i_am("EJ_vulnerable.Rmd")
 rm(list = ls())
 ```
 
@@ -95,7 +102,7 @@ LA_ejscreen_inequal <- LA_ejscreen %>%
   nrow() / nrow(LA_ejscreen) * 100
 
 # Displaying the percentage of the population impacted by environmental quality in Los Angeles
-print(paste("Population considered low income as less than 5% in LA:",LA_ejscreen_low))
+print(paste("Population considered low income as less than 5% in LA:",LA_ejscreen_inequal))
 ```
 
 Investigates areas with high levels of both Particulate Matter 2.5 and Superfund sites, examining how their coexistence affects the environment in specific regions.
@@ -130,7 +137,7 @@ plot(LA_ejscreen["ID"])
 plot(LA_redlining["grade"])
 ```
 
-#### Number of census block group
+### Number of census block group
 
 ```{r ej-red2}
 # try using the st_intersects functions
@@ -143,7 +150,7 @@ print(paste("the number of census block groups:", nrow(redlining_cbgs2)))
 
 ```
 
-### Table
+#### Table
 
 present conditions within historical redlining categories using the mean values of the following variables: percent low income, percentile for Particulate Matter 2.5, percentile for low life expectancy, and percentile for air toxics cancer risk based on EJScreen data.
 
